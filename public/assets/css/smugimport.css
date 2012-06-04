@@ -1,0 +1,138 @@
+h1, h2, h3, h4, h5
+{
+    font-size: 13px;
+}
+
+/* Forms */
+dl.zend_form
+{
+    width: 41.1em;
+    /*margin: 2em 0;*/
+    padding: 0;
+}
+
+.zend_form dt
+{
+    width: 15em;
+    float: left;
+    margin: 0 0 0 0;
+    padding: .5em;
+    font-weight: bold;
+}
+
+/* commented backslash hack for mac-ie5 \*/
+.zend_form dt { clear: both; }
+/* end hack */
+
+.zend_form dd
+{
+    float: left;
+    width: 24em;
+    margin: 0 0 0 0;
+    padding: .5em;
+}
+
+/* FAQ */
+
+dl.faq
+{
+    margin: 0;
+    padding: 0;
+}
+
+.faq dt
+{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.faq dd
+{
+    margin: 0 0 1em 1em;
+    padding: 0;
+}
+
+/* Progress Bar */
+iframe#process
+{
+    position: absolute;
+    left: -100px;
+    top: -100px;
+
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
+}
+
+#progressbar
+{
+    width: 100%;
+    clear: both;
+}
+
+#progress-text
+{
+    padding: 10px;
+}
+
+.help-box
+{
+    display: inline-block;
+    padding: 0;
+}
+
+.help-box li
+{
+    width: 232px;
+    float: left;
+    list-style-type: none;
+    list-style-image: none;
+    list-style-position: outside;
+    padding-left: 12px;
+}
+
+.roundedcornr_box_867993 {
+	background: url(../images/roundedcornr_867993_tl.png) no-repeat top left;
+}
+.roundedcornr_top_867993 {
+	background: url(../images/roundedcornr_867993_tr.png) no-repeat top right;
+}
+.roundedcornr_bottom_867993 {
+	background: url(../images/roundedcornr_867993_bl.png) no-repeat bottom left;
+}
+.roundedcornr_bottom_867993 div {
+	background: url(../images/roundedcornr_867993_br.png) no-repeat bottom right;
+}
+.roundedcornr_content_867993 {
+	background: url(../images/roundedcornr_867993_r.png) top right repeat-y;
+}
+
+.roundedcornr_top_867993 div,.roundedcornr_top_867993,
+.roundedcornr_bottom_867993 div, .roundedcornr_bottom_867993 {
+	width: 100%;
+	height: 15px;
+	font-size: 1px;
+}
+.roundedcornr_content_867993, .roundedcornr_bottom_867993 {
+	margin-top: -15px;
+}
+.roundedcornr_content_867993 { padding: 0 15px; }
+
+.roundedcornr_content_867993 p
+{
+    height: 200px;
+}
+
+.roundedcornr_content_867993 p, .roundedcornr_content_867993 a
+{
+    font-size: 14px;
+}
+
+.roundedcornr_content_867993 img
+{
+    float: left;
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+}

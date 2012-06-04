@@ -1,0 +1,155 @@
+/*
+Default Facebook CSS 
+
+From: http://devtacular.com/articles/bkonrad/how-to-style-an-application-like-facebook/
+*/
+
+.fbbody
+{
+    font-family: "lucida grande" ,tahoma,verdana,arial,sans-serif;
+    font-size: 11px;
+    color: #333333;
+    overflow: hidden;
+    min-height: 600px;
+}
+/* Default Anchor Style */
+.fbbody a
+{
+    color: #3b5998;
+    outline-style: none;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+}
+.fbbody a:hover
+{
+    text-decoration: underline;
+}
+/* Facebook Box Styles */
+.fbgreybox
+{
+    background-color: #f7f7f7;
+    border: 1px solid #cccccc;
+    color: #333333;
+    padding: 10px;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+.fbbluebox
+{
+    background-color: #eceff6;
+    border: 1px solid #d4dae8;
+    color: #333333;
+    padding: 10px;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+.fbinfobox
+{
+    background-color: #fff9d7;
+    border: 1px solid #e2c822;
+    color: #333333;
+    padding: 10px;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+.fberrorbox
+{
+    background-color: #ffebe8;
+    border: 1px solid #dd3c10;
+    color: #333333;
+    padding: 10px;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+/* Content Divider on White Background */
+.fbcontentdivider
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 520px;
+    height: 1px;
+    background-color: #d8dfea;
+}
+/* Facebook Tab Style */
+.fbtab
+{
+    padding: 8px;
+    background-color: #d8dfea;
+    color: #3b5998;
+    font-weight: bold;
+    float: left;
+    margin-right: 4px;
+    text-decoration: none;
+}
+.fbtab:hover
+{
+    background-color: #3b5998;
+    color: #ffffff;
+    cursor: hand;
+}
+
+/* From: http://wiki.developers.facebook.com/index.php/Facebook_Styles */
+
+input.search {
+    background:white url('facebook.com/images/magglass.png') no-repeat scroll 3px 4px;
+    padding-left:17px;
+}
+
+input, textarea, select {
+    border:1px solid #BDC7D8;
+    font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+    font-size:11px;
+    padding:3px;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color:#687FB0
+}
+
+.field {
+    border:1px solid #bdc7d8;
+    padding:2px
+}
+
+.field:focus {
+    border-color:#687FB0
+}
+
+textarea.field {
+    width:98.5%;
+    height:100px
+}
+
+button, input[type="submit"] {
+    padding:1px 3px 1px 4px;
+    font-size:1em;
+    cursor:pointer;
+    background:#3b5998;
+    color:#fff;
+    border:1px solid #0e1f5b;
+    border-left-color:#D9DFEA;
+    border-top-color:#D9DFEA;
+}
+
+button.next, button.cancel {
+    background:#ddd;
+    color:#111;
+    border:1px solid #666;
+    border-left-color:#ddd;
+    border-top-color:#ddd
+}
+
+/* Loading Spinners */
+.spinner {
+    background: url(http://www.facebook.com/images/loaders/indicator_blue_small.gif) right no-repeat;
+    padding: 0 20px 0 0;
+}
+
+.spinner_large {
+    background: url(http://www.facebook.com/images/loaders/indicator_blue_large.gif) right no-repeat;
+    width: 32px;
+    height: 32px;
+}
+
+

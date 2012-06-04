@@ -1,0 +1,74 @@
+<?php echo $this->doctype() ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <?php
+//        $this->headScript()->appendFile("http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php");
+        $this->headScript()->appendFile($this->baseUrl() . "/assets/js/jquery-1.3.2.min.js");
+        $this->headScript()->appendFile($this->baseUrl() . "/assets/js/jquery-ui-1.7.2.custom.min.js");
+        echo $this->headScript();
+        ?>
+        <?php
+        $this->headLink()->appendStylesheet($this->baseUrl() . "/assets/css/fb.css?v=1.6", "screen");
+        $this->headLink()->appendStylesheet($this->baseUrl() . "/assets/css/fbtabs.css?v=1.1", "screen");
+        $this->headLink()->appendStylesheet($this->baseUrl() . "/assets/css/smugimport.css?v=1.3", "screen");
+        $this->headLink()->appendStylesheet($this->baseUrl() . "/assets/css/cupertino/jquery-ui-1.7.2.custom.css?v=1.0", "screen");
+        echo $this->headLink();
+        ?>
+
+    </head>
+<body class="fbbody">
+
+    <div style="margin: 3px 0; float: right; height: 26px;">
+    <fb:bookmark></fb:bookmark>
+    </div>
+    <div style="clear: right;"></div>
+
+    <!-- Tabs -->
+    <?php //echo $this->layout()->nav ?>
+    <?php $controllerName = Zend_Controller_Front::getInstance()->getRequest()->getControllerName(); ?>
+    <div class="fb-tabs clearfix">
+        <center>
+            <div class="left_tabs">
+                <ul class="fb-tabitems clearfix">
+                    <li><a href="<?php echo $this->baseUrl() ?>/import/form" <?php echo ($controllerName == 'import') ? 'class="selected"' : null ?>>Import</a></li>
+                    <li><a href="<?php echo $this->baseUrl() ?>/settings/settings" <?php echo ($controllerName == 'settings') ? 'class="selected"' : null ?>>Settings</a></li>
+                </ul>
+            </div>
+            <div class="right_tabs">
+                <ul class="fb-tabitems clearfix">
+                    <li><a href="<?php echo $this->baseUrl() ?>/help" <?php echo ($controllerName == 'help') ? 'class="selected"' : null ?>>Help</a></li>
+                </ul>
+            </div>
+        </center>
+    </div>
+    <!-- End tabs -->
+
+    <!-- Messages -->
+    <?php echo $this->flashMessenger(); ?>
+    <!-- End messages -->
+
+    <!-- Content -->
+    <?php echo $this->layout()->content ?>
+    <!-- End content -->
+
+    <?php $config = new Zend_Config_Ini(APPLICATION_PATH . '/configs/application.ini', APPLICATION_ENV); ?>
+    <?php $this->inlineScript()->prependFile("http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"); ?>
+
+    <?php $this->inlineScript()->appendScript('FB_RequireFeatures(["XFBML"], function(){ FB.Facebook.init("' . $config->facebook->apiKey .'", "/xd_receiver.html"); });'); ?>
+
+    <!-- Iframe resizing see: http://wiki.developers.facebook.com/index.php/Resizable_IFrame -->
+    <!-- Note: Include this div markup as a workaround for a known bug in this release on IE where you may get a "operation aborted" error -->
+    <div id="FB_HiddenIFrameContainer" style="display:none; position:absolute; left:-100px; top:-100px; width:0px; height: 0px;" />
+    <?php $this->inlineScript()->appendScript('FB_RequireFeatures(["CanvasUtil"], function(){ FB.XdComm.Server.init("/xd_receiver.html"); FB.CanvasClient.startTimerToSizeToContent(); });'); ?>
+
+    <?php $this->inlineScript()->appendScript('FB.init("' . $config->facebook->apiKey . '", "/xd_receiver.html");'); ?>
+    <?php echo $this->inlineScript(); ?>
+
+    <!-- Google analytics -->
+    <?php echo $this->GoogleAnalytics($config->google->trackerId); ?>
+    <!-- End Google analytics -->
+</body>
+</html>

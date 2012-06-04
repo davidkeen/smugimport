@@ -1,0 +1,52 @@
+<?php $dialogJs = '
+    dialogOpen = false;
+
+    $(function() {
+        $("#progressbar").progressbar({
+            value: 0
+        });
+
+        $("#dialog").dialog({
+            bgiframe: true,
+            height: 140,
+            modal: true,
+            autoOpen: false
+        });
+    });
+
+    function Zend_ProgressBar_Update(data) {
+		//alert("Zend_ProgressBar_Update called");
+        $("#progressbar").progressbar("option", "value", data.percent);
+        $("#progress-text").html(
+            "Imported " + data.current + " of " + data.max + " photos.<br />" +
+            "About " + getTimeString(data.timeRemaining) + " remaining.");
+    }
+
+    function openDialog() {
+        if (!dialogOpen) {
+            $("#dialog").dialog("open");
+            dialogOpen = true;
+        }
+    }
+
+    function getTimeString(seconds) {
+        if (seconds > 100) {
+            var minutes = Math.floor(seconds / 60);
+            return (minutes > 1) ? minutes + " minutes" : minutes + " minute";
+        }
+        return seconds + " seconds";
+    }
+    ';
+
+    $this->inlineScript()->appendScript($dialogJs);
+
+    echo $this->form;
+?>
+
+<div id="dialog" title="Importing photos">
+    <div id="progressbar"></div>
+    <div id="progress-text">Please wait...</div>
+</div>
+
+
+<iframe id="process" name="process"></iframe>

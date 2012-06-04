@@ -1,0 +1,4 @@
+Zend Framework: 1.11.2
+Doctrine: 2.0
+Facebook: 2.1.2
+phpSmug: 3.0
